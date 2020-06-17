@@ -1,0 +1,176 @@
+SPARK :
+
+Over the past five years, the platform of choice for building predictive analytics, AI, and real-time applications has been Apache Spark.
+Spark makes it possible to run powerful analytics algorithms at scale and in real time to drive business insights.
+
+Managing and deploying Spark at scale has remained challenging on spark cluster so databricks came into picture :
+Databricks provides an end-to-end, managed Apache Spark platform optimized for the cloud. 
+Featuring one-click deployment, autoscaling, and an optimized Databricks Runtime that can improve the performance of Spark jobs in the cloud by 10-100x, Databricks makes it simple and cost-efficient to run large-scale Spark workloads. 
+Moreover, Databricks includes an interactive notebook environment, monitoring tools, and security controls that make it easy to leverage Spark in enterprises with thousands of users.
+
+
+fast, easy and collaborative Spark-based platform on Azure.
+A fast, easy, and collaborative Apache Spark™ based analytics platform optimized for Azure.
+	Designed in collaboration with Microsoft, Azure Databricks combines the best of Databricks and Azure to help customers accelerate innovation with one-click set up, streamlined workflows and an interactive workspace that enables collaboration between data scientists, data engineers, and business analysts.
+
+Azure DataBricks (Spark analytics cloud service):
+Apache Spark + Databricks + Enterprise Cloud = Azure Databricks
+Azure Databricks features optimized connectors to Azure storage platforms (e.g. Data Lake and Blob Storage) for the fastest possible data access, and one-click management directly from the Azure console.
+
+Why is Azure Databricks so useful for data scientists and engineers? 
+	INCREASE PRODUCTIVITY AND COLLABORATION
+	BUILD ON A SECURE, TRUSTED CLOUD
+	SCALE WITHOUT LIMITS
+
+INCREASE PRODUCTIVITY AND COLLABORATION :
+Bring teams together in an interactive workspace. 
+Notebooks on Databricks are live and shared, with real-time collaboration, so that everyone in your organization can work with your data.
+Launch your new Spark environment with a single click.
+High-speed connectors to Azure storage services such as Azure SQL Data Warehouse, Azure Cosmos DB, Azure Data Lake Store, Azure Blob storage, and Azure Event Hub. 
+Add artificial intelligence (AI) capabilities instantly and share insights through rich integration with Power BI for interactive visualization.
+
+BUILD ON A SECURE, TRUSTED CLOUD:
+Protect your data and business with Azure Active Directory integration, role-based controls, and enterprise-grade SLAs.
+Get peace of mind with fine-grained user permissions, enabling secure access to Databricks notebooks, clusters, jobs and data.
+
+SCALE WITHOUT LIMITS :
+Auto-scaling and auto-termination for Spark clusters to automatically minimize costs.
+Globally scale your analytics and data science projects.
+Build and innovate faster using machine learning capabilities.
+Add capacity instantly. Reduce cost and complexity with a fully-managed, cloud-native platform.
+Target any size data or project using a complete set of analytics technologies including SQL, Streaming, MLlib, and Graph.
+
+
+Problem : 99% of organizations still struggle to get valuable analytics from their Big Data and achieve the full potential of AI :
+
+Note:Azure Databricks is backed by Azure Database and other technologies that enable highly concurrent access, fast performance and geo-replication.
+
+
+can we EASY TO USE?
+Azure Databricks comes packaged with interactive notebooks that let you connect to common data sources, run machine learning algorithms, and learn the basics of Apache Spark to get started quickly.
+It also features an integrated debugging environment to let you analyze the progress of your Spark jobs from within interactive notebooks, and powerful tools to analyze past jobs.
+Finally, other common analytics libraries, such as the Python and R data science stacks, are preinstalled so that you can use them with Spark to derive insights.
+Apache Spark to provide a unified, end-to-end platform for easier to use.
+
+
+Azure Integrstion Service:
+
+Azure Storage and Azure Data Lake integration : storage services are exposed to Databricks users via DBFS to provide caching and optimized analysis over existing data.
+
+Azure Power BI : Users can connect Power BI directly to their Databricks clusters using JDBC in order to query data interactively.
+Azure Active Directory provide controls of access to resources.
+Azure SQL Data Warehouse, Azure SQL DB and Azure CosmosDB: Azure Databricks easily and efficiently uploads results into these services for further analysis and real-time serving, making it simple to build end-to-end data architectures on Azure.
+
+
+notebook (Jupyter Notebooks):
+
+A notebook in the spark cluster is a web-based interface that lets you run code(Python, Scala, SQL, R) and visualizations using different languages.
+Once the cluster is up and running, you can create notebooks in it and also run Spark jobs.
+
+In the Create Notebook dialog box, provide Notebook name, select language (Python, Scala, SQL, R).
+
+Notebook external formats:
+A file containing only source code statements with the extension .scala, .py, .sql, or .r .
+
+
+Notebooks and clusters:
+
+Before you can do any work in a notebook, you must first attach the notebook to a cluster.
+
+Execution contexts :
+
+When you attach a notebook to a cluster, Azure Databricks creates an execution context.
+An execution context contains the state for a REPL environment for each supported programming language: Python, R, Scala, and SQL. 
+When you run a cell in a notebook, the command is dispatched to the appropriate language REPL environment and run.
+You can also use the REST 1.2 API to create an execution context and send a command to run in the execution context. 
+Similarly, the command is dispatched to the language REPL environment and run.
+
+Threshold :
+A cluster has a maximum number of execution contexts (145). 
+Once the number of execution contexts has reached this threshold, you cannot attach a notebook to the cluster or create a new execution context.
+
+Idle execution contexts:
+An execution context is considered idle when the last completed execution occurred past a set idle threshold.
+Last completed execution is the last time the notebook completed execution of commands.
+The idle threshold is the amount of time that must pass between the last completed execution and any attempt to automatically detach the notebook. 
+The default idle threshold is 24 hours.
+
+if maximum number of execution contexts (145) reached what will do ?
+When a cluster has reached the maximum context limit, Azure Databricks removes (evicts) idle execution contexts (starting with the least recently used) as needed. 
+
+<impt>
+Even when a context is removed, the notebook using the context is still attached to the cluster and appears in the cluster’s notebook list.
+<impt>
+
+Streaming :
+Streaming notebooks are considered actively running, and their context is never evicted until their execution has been stopped. If an idle context is evicted, the UI displays a message indicating that the notebook using the context was detached due to being idle.
+
+
+what will happed if you attach if maximum number of execution contexts (145) reached what will do ?
+If you attempt to attach a notebook to cluster that has maximum number of execution contexts and there are no idle contexts (or if auto-eviction is disabled), the UI displays a message saying that the current maximum execution contexts threshold has been reached and the notebook will remain in the detached state.
+
+
+If you fork(stopped inbetween while execution) a process, an idle execution context is still considered idle once execution of the request that forked the process returns. Forking separate processes is not recommended with Spark.
+
+
+Visualizations:
+
+Azure Databricks supports various types of visualizations out of the box using the display and displayHTML functions.
+Azure Databricks also natively supports visualization libraries in Python and R and lets you install and use third-party libraries.
+The display function supports several data and visualization types.
+
+Can we view images via notebook ?
+Yes.
+For clusters running Databricks Runtime 4.1 and above, display attempts to render image thumbnails for DataFrame columns matching Spark’s ImageSchema. 
+In Databricks Runtime 5.1 and above, display supports pandas DataFrames.
+If you call a pandas or Koalas DataFrame without display, the table is rendered as it would be in Jupyter.
+Thumbnail rendering works for any images successfully read in through the readImages function.
+Azure Databricks supports the rendering of 1, 3, or 4 channel images (where each channel consists of a single byte).
+
+One-channel images
+Three-channel images
+Four-channel images
+
+
+Machine learning visualizations:
+The display function supports visualizations of the following machine learning training parameters.
+Residuals
+	For linear and logistic regressions, display supports rendering a fitted versus residuals plot. To obtain this plot, you supply the model and DataFrame.
+ROC curves (Receiver operating characteristic):
+Decision trees
+supported for Scala in Databricks Runtime 4.1 and above and for Python in Databricks Runtime 4.3 and above.
+
+Visualizations by language:
+Visualizations in Python
+To plot data in Python, use the display function
+
+Example :
+
+diamonds_df = spark.read.csv("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", header="true", inferSchema="true")
+display(diamonds_df.groupBy("color").avg("price").orderBy("color"))
+
+Visualizations in R:
+To plot data in R, use the display function.
+Example:
+
+library(SparkR)
+diamonds_df <- read.df("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv", source = "csv", header="true", inferSchema = "true")
+display(arrange(agg(groupBy(diamonds_df, "color"), "price" = "avg"), "color"))
+
+
+Visualizations in Scala:
+To plot data in Scala, use the display function
+Example : 
+
+val diamonds_df = spark.read.format("csv").option("header","true").option("inferSchema","true").load("/databricks-datasets/Rdatasets/data-001/csv/ggplot2/diamonds.csv")
+display(diamonds_df.groupBy("color").avg("price").orderBy("color"))
+
+
+Visualizations in SQL:
+When you run a SQL query, Azure Databricks automatically extracts some of the data and displays it as a table.
+
+Example:
+SELECT color, avg(price) AS price FROM diamonds GROUP BY color ORDER BY COLOR
+
+From that above extracted data you select various chart types:
+You can select different chart types.
