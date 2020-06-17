@@ -174,3 +174,28 @@ SELECT color, avg(price) AS price FROM diamonds GROUP BY color ORDER BY COLOR
 
 From that above extracted data you select various chart types:
 You can select different chart types.
+
+
+Clusters:
+An Azure Databricks cluster is a set of computation resources and configurations on which you run data engineering, data science, and data analytics workloads, such as production ETL pipelines, streaming analytics, ad-hoc analytics, and machine learning.
+two cluster modes: standard and high concurrency.
+Standard clusters are configured to terminate automatically after 120 minutes.
+Standard clusters are recommended for a single user. Standard can run workloads developed in any language: Python, R, Scala, and SQL.
+
+High concurrency clusters are configured to not terminate automatically.
+A high concurrency cluster is a managed cloud resource.
+The key benefits of high concurrency clusters are that they provide Apache Spark-native fine-grained sharing for maximum resource utilization and minimum query latencies. 
+
+Interactive clusters and automated clusters:
+interactive clusters to analyze data collaboratively using interactive notebooks.
+automated clusters to run fast and robust automated jobs.
+
+Note:Cannot change the cluster mode after a cluster is created. If you want a different cluster mode, you must create a new cluster.
+
+WorkSpace :
+Workspace - environment for accessing all of your Azure Databricks assets.
+The workspace organizes objects (notebooks, libraries, and experiments) into folders, and provides access to data and computational resources such as clusters and jobs
+
+Notebook
+Library
+ML
